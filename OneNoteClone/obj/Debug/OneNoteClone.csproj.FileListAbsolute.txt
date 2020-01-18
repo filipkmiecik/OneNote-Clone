@@ -1,0 +1,8 @@
+C:\Users\fizzc\source\repos\OneNoteClone\OneNoteClone\obj\Debug\OneNoteClone.csprojAssemblyReference.cache
+C:\Users\fizzc\source\repos\OneNoteClone\OneNoteClone\obj\Debug\MainWindow.g.cs
+C:\Users\fizzc\source\repos\OneNoteClone\OneNoteClone\obj\Debug\Views\NoteWindow.g.cs
+C:\Users\fizzc\source\repos\OneNoteClone\OneNoteClone\obj\Debug\Views\SignInWindow.g.cs
+C:\Users\fizzc\source\repos\OneNoteClone\OneNoteClone\obj\Debug\App.g.cs
+C:\Users\fizzc\source\repos\OneNoteClone\OneNoteClone\obj\Debug\OneNoteClone_Content.g.cs
+C:\Users\fizzc\source\repos\OneNoteClone\OneNoteClone\obj\Debug\OneNoteClone_MarkupCompile.cache
+C:\Users\fizzc\source\repos\OneNoteClone\OneNoteClone\obj\Debug\OneNoteClone_MarkupCompile.lref
