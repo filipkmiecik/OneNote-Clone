@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>OneNoteClone</RootNamespace>
     <AssemblyName>OneNoteClone</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -16,6 +16,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,36 +73,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\Commands\NewContainer.cs" />
-    <Compile Include="ViewModels\Commands\NewNote.cs" />
-    <Compile Include="ViewModels\Commands\SignIn.cs" />
-    <Compile Include="ViewModels\Commands\SignUp.cs" />
+    <Compile Include="ViewModels\Commands\NewContainerCommand.cs" />
+    <Compile Include="ViewModels\Commands\NewNoteCommand.cs" />
+    <Compile Include="ViewModels\Commands\SignInCommand.cs" />
+    <Compile Include="ViewModels\Commands\SignUpCommand.cs" />
     <Compile Include="ViewModels\DataManager.cs" />
     <Compile Include="ViewModels\NoteVM.cs" />
     <Compile Include="ViewModels\SignInVM.cs" />
-    <Compile Include="Views\NoteWindow.xaml.cs">
+    <Compile Include="View\NoteWindow.xaml.cs">
       <DependentUpon>NoteWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SignInWindow.xaml.cs">
+    <Compile Include="View\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Views\NoteWindow.xaml">
+    <Page Include="View\NoteWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SignInWindow.xaml">
+    <Page Include="View\SignInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

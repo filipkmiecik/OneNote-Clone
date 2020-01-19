@@ -6,12 +6,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace OneNoteClone.ViewModels
 {
     public class NoteVM
     {
-        ObservableCollection<NoteContainer> NoteContainer { get; set; }
+        public ObservableCollection<NoteContainer> NoteContainer { get; set; }
 
         private NoteContainer selectedContainer;
 
@@ -27,14 +28,75 @@ namespace OneNoteClone.ViewModels
 
         public ObservableCollection<Note> Notes { get; set; }
 
-        public NewContainer NewContainer { get; set; }
+        public NewContainerCommand NewContainer { get; set; }
 
-        public NewNote NewNote { get; set; }
+        public NewNoteCommand NewNote { get; set; }
 
         public NoteVM()
         {
-            NewContainer = new NewContainer(this);
-            NewNote = new NewNote(this);
+            NewContainer = new NewContainerCommand(this);
+            NewNote = new NewNoteCommand(this);
+
+            NoteContainer = new ObservableCollection<NoteContainer>();
+            Notes = new ObservableCollection<Note>();
+
+            loadNoteContaiers();
+        }
+
+        public void CreateNewNote(int noteContainerId)
+        {
+            Note note = new Note()
+            {
+                Title = "New Note",
+                ContainerId = noteContainerId,
+                UpdateDate = DateTime.Now,
+                CreationDate = DateTime.Now
+            };
+            DataManager.Insert(note);
+        }
+
+        public void CreateNewContainer()
+        {
+            NoteContainer noteContainer = new NoteContainer()
+            {
+                Name = "New notebook"
+            };
+
+            DataManager.Insert(noteContainer);
+        }
+
+        public void loadNoteContaiers()
+        {
+            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(DataManager.databaseFile))
+            {
+                var noteContairner = conn.Table<NoteContainer>().ToList();
+
+                NoteContainer.Clear();
+                foreach(var container in noteContairner)
+                {
+                    NoteContainer.Add(container);
+                }
+            }
+        }
+        /// <summary>
+        /// Get all the notes where id of note container Id is equal to conatainer Id
+        /// </summary>
+        public void loadNote()
+        {
+            using(SQLite.SQLiteConnection connection = new SQLite.SQLiteConnection(DataManager.databaseFile))
+            {
+                if(SelectedContainer != null)
+                {
+                    var notes = connection.Table<Note>().Where(n => n.ContainerId == SelectedContainer.Id).ToList();
+
+                    Notes.Clear();
+                    foreach(var note in notes)
+                    {
+                        Notes.Add(note);
+                    }
+                }
+                
+            }
         }
     }
 }

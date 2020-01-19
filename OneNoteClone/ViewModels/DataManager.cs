@@ -10,8 +10,15 @@ namespace OneNoteClone.ViewModels
 {
     public class DataManager
     {
-        private static string databaseFile = Path.Combine(Environment.CurrentDirectory, "notesDatabase");
+        public static string databaseFile = Path.Combine(Environment.CurrentDirectory, "notesDatabase");
 
+
+        /// <summary>
+        /// Accessing database and Inserting items.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entry"></param>
+        /// <returns>true </returns>
         public static bool Insert<T>(T entry)
         {
             bool result = false;

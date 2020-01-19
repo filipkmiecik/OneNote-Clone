@@ -17,13 +17,13 @@ namespace OneNoteClone.ViewModels
 			get { return user; }
 			set { user = value; }
 		}
-		public SignUp SignUp { get; set; }
-		public SignIn SignIn { get; set; }
+		public SignUpCommand SignUp { get; set; }
+		public SignInCommand SignIn { get; set; }
 
 		public SignInVM()
 		{
-			SignUp = new SignUp(this);
-			SignIn = new SignIn(this);
+			SignUp = new SignUpCommand(this);
+			SignIn = new SignInCommand(this);
 		}
 	}
 }
