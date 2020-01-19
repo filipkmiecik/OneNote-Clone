@@ -24,6 +24,27 @@
                           />
             </MenuItem>
         </Menu>
+        <ListView Width="200"
+                  DockPanel.Dock="Right"
+                  ItemsSource="{Binding Notes}">
+         
+        </ListView>
+        <ListView Width="600"
+                  Height="50"
+                  DockPanel.Dock="top"
+                  ItemsSource="{Binding NoteContainer}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ToolBarTray
+            DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Content="Bold"></Button>
+            </ToolBar>
+        </ToolBarTray>
         <Grid>
             
         </Grid>

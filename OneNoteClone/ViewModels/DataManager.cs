@@ -10,7 +10,7 @@ namespace OneNoteClone.ViewModels
 {
     public class DataManager
     {
-        private static string databaseFile = Path.Combine(Environment.CurrentDirectory, "notesDatabase");
+        public static string databaseFile = Path.Combine(Environment.CurrentDirectory, "notesDatabase");
 
 
         /// <summary>
