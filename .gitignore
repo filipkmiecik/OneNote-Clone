@@ -1,0 +1,5 @@
+/packages
+/.vs
+OneNoteClone/bin/Debug
+OneNoteClone/obj/Debug
+*.cache

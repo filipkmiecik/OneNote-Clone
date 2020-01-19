@@ -27,14 +27,38 @@ namespace OneNoteClone.ViewModels
 
         public ObservableCollection<Note> Notes { get; set; }
 
-        public NewContainer NewContainer { get; set; }
+        public NewContainerCommand NewContainer { get; set; }
 
-        public NewNote NewNote { get; set; }
+        public NewNoteCommand NewNote { get; set; }
 
         public NoteVM()
         {
-            NewContainer = new NewContainer(this);
-            NewNote = new NewNote(this);
+            NewContainer = new NewContainerCommand(this);
+            NewNote = new NewNoteCommand(this);
         }
+
+        public void CreateNewNote(int noteContainerId)
+        {
+            Note note = new Note()
+            {
+                Title = "New Note",
+                ContainerId = noteContainerId,
+                UpdateDate = DateTime.Now,
+                CreationDate = DateTime.Now
+            };
+            DataManager.Insert(note);
+        }
+
+        public void CreateNewContainer()
+        {
+            NoteContainer noteContainer = new NoteContainer()
+            {
+                Name = "New notebook"
+            };
+
+            DataManager.Insert(noteContainer);
+        }
+
+
     }
 }
