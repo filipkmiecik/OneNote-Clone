@@ -16,11 +16,11 @@
                 <MenuItem Header="New Section"
                           Command="{Binding NewContainer}"/>
                 <MenuItem Header="New Note"
-                          Click="ExitMenuItem_Click"
                           Command="{Binding NewNote}"
                           CommandParameter="{Binding SelectedContainer}"/>
                 <MenuItem x:Name="ExitMenuItem"
                           Header="Shutdown"
+                          Click="ExitMenuItem_Click"                         
                           />
             </MenuItem>
         </Menu>
@@ -52,17 +52,17 @@
         <ToolBarTray
             DockPanel.Dock="Top">
             <ToolBar>
-                <Button Content="B" 
+                <ToggleButton Content="B" 
                         FontWeight="Bold"
                         x:Name="buttonBold"
-                        Click="ButtonBold_Click"></Button>
+                        Click="ButtonBold_Click"></ToggleButton>
             </ToolBar>
         </ToolBarTray>
         <Grid>
             <RichTextBox
                 x:Name="noteRichTextBox"
+                SelectionChanged="NoteRichTextBox_SelectionChanged"
                 TextChanged="NoteRichTextBox_TextChanged"/>
         </Grid>
-        
     </DockPanel>
 </Window>
