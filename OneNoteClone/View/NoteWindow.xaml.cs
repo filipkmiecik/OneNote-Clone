@@ -33,5 +33,20 @@ namespace OneNoteClone.View
         {
             Application.Current.Shutdown();
         }
+
+        private void NoteRichTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int lengthOfNoteRichTextBox = new TextRange(noteRichTextBox.Document.ContentStart, noteRichTextBox.Document.ContentEnd).Text.Length;
+
+            StatusBarText.Text = $"Note length: {lengthOfNoteRichTextBox} ";
+        }
+
+        private void ButtonBold_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedText = new TextRange(noteRichTextBox.Selection.Start, noteRichTextBox.Selection.End);
+            selectedText.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Bold);
+
+            //Todo toggle
+        }
     }
 }
