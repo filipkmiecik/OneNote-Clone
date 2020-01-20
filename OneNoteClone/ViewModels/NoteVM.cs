@@ -69,6 +69,7 @@ namespace OneNoteClone.ViewModels
         {
             using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(DataManager.databaseFile))
             {
+                conn.CreateTable<NoteContainer>();
                 var noteContairner = conn.Table<NoteContainer>().ToList();
 
                 NoteContainer.Clear();
