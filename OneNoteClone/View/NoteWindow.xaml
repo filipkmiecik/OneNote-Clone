@@ -53,9 +53,23 @@
             DockPanel.Dock="Top">
             <ToolBar>
                 <ToggleButton Content="B" 
-                        FontWeight="Bold"
                         x:Name="buttonBold"
+                        FontWeight="Bold"
                         Click="ButtonBold_Click"></ToggleButton>
+                <ToggleButton Content="I" 
+                        x:Name="buttonItalic"
+                        FontStyle="Italic"
+                        Click="ButtonItalic_Click"></ToggleButton>
+                <ToggleButton x:Name="buttonUnderline"
+                        Click="ButtonUnderline_Click">
+                    <TextBlock Text="U" TextDecorations="Underline"/></ToggleButton>
+                <ComboBox x:Name="ComboBoxFontFamily"
+                          SelectionChanged="ComboBoxFontFamily_SelectionChanged"
+                          Width="100"></ComboBox>
+                <ComboBox x:Name="ComboBoxFontSize"
+                          Width="50"
+                          IsEditable="True"
+                          TextBoxBase.TextChanged="ComboBoxFontSize_TextChanged"></ComboBox>
             </ToolBar>
         </ToolBarTray>
         <Grid>

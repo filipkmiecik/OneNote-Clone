@@ -40,7 +40,7 @@ namespace OneNoteClone.ViewModels
             NoteContainer = new ObservableCollection<NoteContainer>();
             Notes = new ObservableCollection<Note>();
 
-            loadNoteContaiers();
+            loadNoteContainers();
         }
 
         public void CreateNewNote(int noteContainerId)
@@ -65,15 +65,15 @@ namespace OneNoteClone.ViewModels
             DataManager.Insert(noteContainer);
         }
 
-        public void loadNoteContaiers()
+        public void loadNoteContainers()
         {
             using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(DataManager.databaseFile))
             {
                 conn.CreateTable<NoteContainer>();
-                var noteContairner = conn.Table<NoteContainer>().ToList();
+                var noteContainer = conn.Table<NoteContainer>().ToList();
 
                 NoteContainer.Clear();
-                foreach(var container in noteContairner)
+                foreach(var container in noteContainer)
                 {
                     NoteContainer.Add(container);
                 }
