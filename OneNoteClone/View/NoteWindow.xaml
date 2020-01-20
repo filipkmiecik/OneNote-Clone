@@ -24,6 +24,11 @@
                           />
             </MenuItem>
         </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusBarText"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
         <ListView Width="200"
                   DockPanel.Dock="Right"
                   ItemsSource="{Binding Notes}">
@@ -32,6 +37,11 @@
         <ListView Width="600"
                   Height="50"
                   DockPanel.Dock="top"
+                  SelectedItem="{
+                     Binding SelectedContainer, 
+                    Mode=TwoWay, 
+                    UpdateSourceTrigger=PropertyChanged
+                  }"
                   ItemsSource="{Binding NoteContainer}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -42,11 +52,17 @@
         <ToolBarTray
             DockPanel.Dock="Top">
             <ToolBar>
-                <Button Content="Bold"></Button>
+                <Button Content="B" 
+                        FontWeight="Bold"
+                        x:Name="buttonBold"
+                        Click="ButtonBold_Click"></Button>
             </ToolBar>
         </ToolBarTray>
         <Grid>
-            
+            <RichTextBox
+                x:Name="noteRichTextBox"
+                TextChanged="NoteRichTextBox_TextChanged"/>
         </Grid>
+        
     </DockPanel>
 </Window>
