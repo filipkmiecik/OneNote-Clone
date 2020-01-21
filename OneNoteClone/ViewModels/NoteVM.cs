@@ -88,11 +88,12 @@ namespace OneNoteClone.ViewModels
         /// </summary>
         public void LoadNote()
         {
-            using(SQLiteConnection connection = new SQLiteConnection(DataManager.databaseFile))
+            using(SQLiteConnection conn = new SQLiteConnection(DataManager.databaseFile))
             {
                 if(SelectedContainer != null)
                 {
-                    var notes = connection.Table<Note>().Where(n => n.ContainerId == SelectedContainer.Id).ToList();
+                    conn.CreateTable<Note>();
+                    var notes = conn.Table<Note>().Where(n => n.ContainerId == SelectedContainer.Id).ToList();
 
                     Notes.Clear();
                     foreach(var note in notes)
