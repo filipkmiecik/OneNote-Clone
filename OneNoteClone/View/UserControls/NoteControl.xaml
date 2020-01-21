@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="OneNoteClone.View.UserControls.NoteControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OneNoteClone.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300">
+    <StackPanel>
+        <TextBlock 
+         x:Name="TextBlockTitle"
+         Text="HYPE"
+         FontSize="20"/>
+        <TextBlock 
+         x:Name="TextBlockDate"
+         Text="4/20/2069"/>
+        <TextBlock 
+         x:Name="TextBlockContent"
+         Text="horizon zero dawn is coming to pc!"
+         TextWrapping="Wrap"/>
+    </StackPanel>
+</UserControl>

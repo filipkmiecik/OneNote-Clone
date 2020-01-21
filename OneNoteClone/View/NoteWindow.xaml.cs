@@ -41,14 +41,14 @@ namespace OneNoteClone.View
 
         private void NoteRichTextBox_SelectionChanged(object sender, RoutedEventArgs e)
         { 
-            var weightSelection = noteRichTextBox.Selection.GetPropertyValue(Inline.FontWeightProperty);
-            buttonBold.IsChecked = (weightSelection != DependencyProperty.UnsetValue) && (weightSelection.Equals(FontWeights.Bold));
+            var boldSelection = noteRichTextBox.Selection.GetPropertyValue(Inline.FontWeightProperty);
+            buttonBold.IsChecked = (boldSelection != DependencyProperty.UnsetValue) && (boldSelection.Equals(FontWeights.Bold));
 
-            var styleSelection = noteRichTextBox.Selection.GetPropertyValue(Inline.FontStyleProperty);
-            buttonItalic.IsChecked = (styleSelection != DependencyProperty.UnsetValue) && (styleSelection.Equals(FontStyles.Italic));
+            var italicSelection = noteRichTextBox.Selection.GetPropertyValue(Inline.FontStyleProperty);
+            buttonItalic.IsChecked = (italicSelection != DependencyProperty.UnsetValue) && (italicSelection.Equals(FontStyles.Italic));
 
-            var decorSelection = noteRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
-            buttonUnderline.IsChecked = (decorSelection != DependencyProperty.UnsetValue) && (decorSelection.Equals(TextDecorations.Underline));
+            var underSelection = noteRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            buttonUnderline.IsChecked = (underSelection != DependencyProperty.UnsetValue) && (underSelection.Equals(TextDecorations.Underline));
 
             ComboBoxFontFamily.SelectedItem = noteRichTextBox.Selection.GetPropertyValue(Inline.FontFamilyProperty);
             ComboBoxFontSize.Text = (noteRichTextBox.Selection.GetPropertyValue(Inline.FontSizeProperty)).ToString();

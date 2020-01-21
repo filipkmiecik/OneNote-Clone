@@ -61,3 +61,7 @@ C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteCl
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone.csproj.CopyComplete
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone.exe
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone.pdb
+C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteContainerControl.g.cs
+C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteContainerControl.baml
+C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteControl.g.cs
+C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteControl.baml

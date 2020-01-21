@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OneNoteClone.View"
         xmlns:vm="clr-namespace:OneNoteClone.ViewModels"
+        xmlns:ui="clr-namespace:OneNoteClone.View.UserControls"
         mc:Ignorable="d"
         Title="NoteWindow" Height="450" Width="800">
     <Window.Resources>
@@ -32,20 +33,24 @@
         <ListView Width="200"
                   DockPanel.Dock="Right"
                   ItemsSource="{Binding Notes}">
-         
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ui:NoteControl ShowNote="{Binding}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <ListView Width="600"
                   Height="50"
                   DockPanel.Dock="top"
                   SelectedItem="{
-                     Binding SelectedContainer, 
+                    Binding SelectedContainer, 
                     Mode=TwoWay, 
                     UpdateSourceTrigger=PropertyChanged
                   }"
                   ItemsSource="{Binding NoteContainer}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"></TextBlock>
+                    <ui:NoteContainerControl ShowContainer="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

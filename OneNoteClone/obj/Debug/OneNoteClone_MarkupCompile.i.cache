@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\
+C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\
 OneNoteClone
 none
 false
 DEBUG;TRACE
-C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\App.xaml
-2-1536441730
-2-260189470
-17-1725228559
-71-1870337803
-View\NoteWindow.xaml;View\SignInWindow.xaml;
+C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\App.xaml
+41087533794
+2263132364
+192058806000
+71-383559114
+View\NoteWindow.xaml;View\SignInWindow.xaml;View\UserControls\NoteContainerControl.xaml;View\UserControls\NoteControl.xaml;
 
 True
 

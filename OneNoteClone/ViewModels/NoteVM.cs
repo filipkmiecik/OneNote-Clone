@@ -22,7 +22,7 @@ namespace OneNoteClone.ViewModels
             set
             {
                 selectedContainer = value;
-                // this is where notes will be retrieved like frostmourne from icecrown
+                LoadNote();
             }
         }
 
@@ -40,7 +40,8 @@ namespace OneNoteClone.ViewModels
             NoteContainer = new ObservableCollection<NoteContainer>();
             Notes = new ObservableCollection<Note>();
 
-            loadNoteContainers();
+            LoadNoteContainers();
+            LoadNote();
         }
 
         public void CreateNewNote(int noteContainerId)
@@ -53,21 +54,24 @@ namespace OneNoteClone.ViewModels
                 CreationDate = DateTime.Now
             };
             DataManager.Insert(note);
+            LoadNote();
         }
 
         public void CreateNewContainer()
         {
             NoteContainer noteContainer = new NoteContainer()
             {
-                Name = "New notebook"
+                Name = "New Notebook"
             };
 
             DataManager.Insert(noteContainer);
+
+            LoadNoteContainers();
         }
 
-        public void loadNoteContainers()
+        public void LoadNoteContainers()
         {
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(DataManager.databaseFile))
+            using (SQLiteConnection conn = new SQLiteConnection(DataManager.databaseFile))
             {
                 conn.CreateTable<NoteContainer>();
                 var noteContainer = conn.Table<NoteContainer>().ToList();
@@ -82,9 +86,9 @@ namespace OneNoteClone.ViewModels
         /// <summary>
         /// Get all the notes where id of note container Id is equal to conatainer Id
         /// </summary>
-        public void loadNote()
+        public void LoadNote()
         {
-            using(SQLite.SQLiteConnection connection = new SQLite.SQLiteConnection(DataManager.databaseFile))
+            using(SQLiteConnection connection = new SQLiteConnection(DataManager.databaseFile))
             {
                 if(SelectedContainer != null)
                 {

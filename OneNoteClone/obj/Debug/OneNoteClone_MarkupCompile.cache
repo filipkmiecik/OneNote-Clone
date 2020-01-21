@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\App.xaml
-2-1536441730
+41087533794
 2263132364
-16-632745306
+18-1299170767
 71-383559114
-View\NoteWindow.xaml;View\SignInWindow.xaml;
+View\NoteWindow.xaml;View\SignInWindow.xaml;View\UserControls\NoteContainerControl.xaml;View\UserControls\NoteControl.xaml;
 
 False
 
