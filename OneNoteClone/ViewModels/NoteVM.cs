@@ -7,20 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using System.ComponentModel;
 
 namespace OneNoteClone.ViewModels
 {
-    public class NoteVM
+    public class NoteVM : INotifyPropertyChanged
     {
+        private bool _isModified;
+
+        public bool isModified {
+            get { return _isModified; }
+            set {
+                _isModified = value;
+                OnPropertyChanged("isModified");
+            }
+        }
         /// <summary>
         /// Public list of the Notes Containers
         /// </summary>
         public ObservableCollection<NoteContainer> NoteContainer { get; set; }
         /// <summary>
-        /// Private instance
+        /// Private instance of NoteContainer it contains selectedContainer.
         /// </summary>
         private NoteContainer selectedContainer;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public StartEditCommand StartEditCommand { get; set; }
+        /// <summary>
+        /// Public instance of NoteContainer it contains selectedContainer.
+        /// </summary>
         public NoteContainer SelectedContainer
         {
             get { return selectedContainer; }
@@ -31,16 +47,27 @@ namespace OneNoteClone.ViewModels
             }
         }
 
+        /// <summary>
+        /// List of Notes 
+        /// </summary>
         public ObservableCollection<Note> Notes { get; set; }
-
+        
+        public FinishEditCommand FinishEditCommand { get; set; }
         public NewContainerCommand NewContainer { get; set; }
 
         public NewNoteCommand NewNote { get; set; }
 
+        /// <summary>
+        /// Constructor of Note View Model
+        /// </summary>
         public NoteVM()
         {
+            isModified = false;
+
             NewContainer = new NewContainerCommand(this);
             NewNote = new NewNoteCommand(this);
+            StartEditCommand = new StartEditCommand(this);
+            FinishEditCommand = new FinishEditCommand(this);
 
             NoteContainer = new ObservableCollection<NoteContainer>();
             Notes = new ObservableCollection<Note>();
@@ -49,6 +76,17 @@ namespace OneNoteClone.ViewModels
             LoadNote();
         }
 
+        private void OnPropertyChanged(string propertyName)
+        {
+            if(PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        /// <summary>
+        /// This method creates new note and adds it to DB.
+        /// </summary>
+        /// <param name="noteContainerId">Selected noteContainer</param>
         public void CreateNewNote(int noteContainerId)
         {
             Note note = new Note()
@@ -61,7 +99,9 @@ namespace OneNoteClone.ViewModels
             DataManager.Insert(note);
             LoadNote();
         }
-
+        /// <summary>
+        /// Creates new Container and adds it to DB
+        /// </summary>
         public void CreateNewContainer()
         {
             NoteContainer noteContainer = new NoteContainer()
@@ -73,7 +113,9 @@ namespace OneNoteClone.ViewModels
 
             LoadNoteContainers();
         }
-
+        /// <summary>
+        /// Loads all Notes COintainers in our DB
+        /// </summary>
         public void LoadNoteContainers()
         {
             using (SQLiteConnection conn = new SQLiteConnection(DataManager.databaseFile))
@@ -89,7 +131,7 @@ namespace OneNoteClone.ViewModels
             }
         }
         /// <summary>
-        /// Get all the notes where id of note container Id is equal to conatainer Id
+        /// Get all the notes where id of note container Id is equal to conatainer Id from our DB
         /// </summary>
         public void LoadNote()
         {
@@ -107,6 +149,21 @@ namespace OneNoteClone.ViewModels
                     }
                 }
                 
+            }
+        }
+
+        public void EditNoteContainer()
+        {
+            isModified = true;
+        }
+
+        public void ChangedNoteContainerName(NoteContainer noteContainer)
+        {
+            if(noteContainer != null)
+            {
+                DataManager.Update(noteContainer);
+                isModified = false;
+                LoadNoteContainers();
             }
         }
     }

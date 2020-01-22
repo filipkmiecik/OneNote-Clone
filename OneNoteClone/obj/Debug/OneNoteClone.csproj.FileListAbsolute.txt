@@ -69,3 +69,7 @@ C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\View\UserCon
 C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteControl.g.cs
 C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteContainerControl.baml
 C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteControl.baml
+C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\bin\Debug\System.Windows.Interactivity.xml
