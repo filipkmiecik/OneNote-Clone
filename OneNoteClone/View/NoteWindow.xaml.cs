@@ -104,15 +104,45 @@ namespace OneNoteClone.View
 
         private void ComboBoxFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             if(ComboBoxFontFamily.SelectedItem != null)
             {
-                noteRichTextBox.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFontFamily.SelectedItem);
+                string xd = ComboBoxFontFamily.SelectedItem.ToString();
+                bool isSomethingSelected = noteRichTextBox.Selection.IsEmpty;
+                if (!isSomethingSelected)
+                {
+                    noteRichTextBox.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, ComboBoxFontFamily.SelectedItem);
+                }
+                else
+                {
+                    noteRichTextBox.Focus();
+                    noteRichTextBox.FontFamily = new FontFamily(ComboBoxFontFamily.SelectedItem.ToString());
+                    // Run r = new Run("", this.noteRichTextBox.CaretPosition);
+                    // r.FontFamily = new FontFamily(ComboBoxFontFamily.SelectedItem.ToString());
+                }
             }
         }
 
         private void ComboBoxFontSize_TextChanged(object sender, TextChangedEventArgs e)
         {
-            noteRichTextBox.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxFontSize.Text);
+            bool isSomethingSelected = noteRichTextBox.Selection.IsEmpty;
+            if (!isSomethingSelected)
+            {
+                noteRichTextBox.Selection.ApplyPropertyValue(Inline.FontSizeProperty, ComboBoxFontSize.Text);
+            }
+            else
+            {
+                noteRichTextBox.Focus();
+
+                noteRichTextBox.FontSize = Convert.ToDouble(ComboBoxFontSize.SelectedItem);
+                //Run r = new Run("", this.noteRichTextBox.CaretPosition);
+                //r.FontSize =  Convert.ToDouble(ComboBoxFontSize.SelectedItem);
+            }
+
+
         }
+
+       
+        
     }
 }

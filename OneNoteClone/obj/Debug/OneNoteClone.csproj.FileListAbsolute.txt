@@ -65,3 +65,7 @@ C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\User
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteContainerControl.baml
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteControl.g.cs
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteControl.baml
+C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteContainerControl.g.cs
+C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteControl.g.cs
+C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteContainerControl.baml
+C:\Users\User\Documents\GitHub\OneNote-Clone\OneNoteClone\obj\Debug\View\UserControls\NoteControl.baml

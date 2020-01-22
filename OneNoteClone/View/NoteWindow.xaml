@@ -74,6 +74,7 @@
                 <ComboBox x:Name="ComboBoxFontSize"
                           Width="50"
                           IsEditable="True"
+           
                           TextBoxBase.TextChanged="ComboBoxFontSize_TextChanged"></ComboBox>
             </ToolBar>
         </ToolBarTray>
