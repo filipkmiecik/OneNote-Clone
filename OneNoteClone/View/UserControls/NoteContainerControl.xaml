@@ -7,9 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="300">
     <Grid>
-        <TextBlock 
+        <TextBlock  Foreground="White"
          x:Name="TextBlockContainerName"
-         Text="{Binding Name}">
+         Text="{Binding Name}"
+         VerticalAlignment="Center"
+         HorizontalAlignment="Center">
             
         </TextBlock>  
     </Grid>

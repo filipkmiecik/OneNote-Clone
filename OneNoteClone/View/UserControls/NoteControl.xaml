@@ -6,15 +6,18 @@
              xmlns:local="clr-namespace:OneNoteClone.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="300">
-    <StackPanel>
-        <TextBlock 
+    <StackPanel Margin="20">
+        <TextBlock HorizontalAlignment="Center"
+               VerticalAlignment="Center"
          x:Name="TextBlockTitle"
          Text="HYPE"
          FontSize="20"/>
-        <TextBlock 
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
          x:Name="TextBlockDate"
          Text="4/20/2069"/>
-        <TextBlock 
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
          x:Name="TextBlockContent"
          Text="horizon zero dawn is coming to pc!"
          TextWrapping="Wrap"/>

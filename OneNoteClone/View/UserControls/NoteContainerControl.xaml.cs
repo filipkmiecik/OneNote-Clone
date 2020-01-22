@@ -21,7 +21,9 @@ namespace OneNoteClone.View.UserControls
     /// </summary>
     public partial class NoteContainerControl : UserControl
     {
-        public NoteContainer ShowContainer
+      
+
+        public  NoteContainer ShowContainer
         {
             get { return (NoteContainer)GetValue(containerProperty); }
             set { SetValue(containerProperty, value); }

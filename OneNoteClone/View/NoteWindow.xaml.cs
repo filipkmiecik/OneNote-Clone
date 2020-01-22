@@ -107,7 +107,6 @@ namespace OneNoteClone.View
 
             if(ComboBoxFontFamily.SelectedItem != null)
             {
-                string xd = ComboBoxFontFamily.SelectedItem.ToString();
                 bool isSomethingSelected = noteRichTextBox.Selection.IsEmpty;
                 if (!isSomethingSelected)
                 {

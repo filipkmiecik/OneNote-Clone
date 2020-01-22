@@ -16,8 +16,12 @@ using System.Windows.Shapes;
 
 namespace OneNoteClone.View.UserControls
 {
+    /// <summary>
+    /// Creates template for the notes.
+    /// </summary>
     public partial class NoteControl : UserControl
     {
+       
         public Note ShowNote
         {
             get { return (Note)GetValue(MyPropertyProperty); }
@@ -26,8 +30,14 @@ namespace OneNoteClone.View.UserControls
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MyPropertyProperty =
-            DependencyProperty.Register("MyProperty", typeof(Note), typeof(NoteControl), new PropertyMetadata(null, SetValues));
+            DependencyProperty.Register("ShowNote", typeof(Note), typeof(NoteControl), new PropertyMetadata(null, SetValues));
 
+        /// <summary>
+        /// This method takes dependency object and assigns values 
+        /// like title, and date of creation.
+        /// </summary>
+        /// <param name="d">Depedency Object</param>
+        /// <param name="e">Event</param>
         private static void SetValues(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             NoteControl note = d as NoteControl;
@@ -40,6 +50,9 @@ namespace OneNoteClone.View.UserControls
             }
         }
 
+        /// <summary>
+        /// This method initializes component
+        /// </summary>
         public NoteControl()
         {
             InitializeComponent();

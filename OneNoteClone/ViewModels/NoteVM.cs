@@ -12,8 +12,13 @@ namespace OneNoteClone.ViewModels
 {
     public class NoteVM
     {
+        /// <summary>
+        /// Public list of the Notes Containers
+        /// </summary>
         public ObservableCollection<NoteContainer> NoteContainer { get; set; }
-
+        /// <summary>
+        /// Private instance
+        /// </summary>
         private NoteContainer selectedContainer;
 
         public NoteContainer SelectedContainer
