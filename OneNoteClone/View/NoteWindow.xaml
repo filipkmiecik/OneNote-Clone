@@ -51,7 +51,20 @@
                   ItemsSource="{Binding NoteContainer}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ui:NoteContainerControl ShowContainer="{Binding}"/>
+                    <Grid>
+                        <ui:NoteContainerControl ShowContainer="{Binding}"/>
+                        <Grid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem 
+                                    x:Name="DeleteNotecontaier"
+                                    Header="Delete"
+                                    Command="{Binding Source={StaticResource VM},
+                                            Path=DeleteNoteContainerCom}"
+                                    CommandParameter="{Binding}"
+                                   ></MenuItem>
+                            </ContextMenu>
+                        </Grid.ContextMenu>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

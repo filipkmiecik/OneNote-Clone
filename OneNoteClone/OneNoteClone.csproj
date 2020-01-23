@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\Commands\DeleteNoteContainerCommand.cs" />
     <Compile Include="ViewModels\Commands\NewContainerCommand.cs" />
     <Compile Include="ViewModels\Commands\NewNoteCommand.cs" />
     <Compile Include="ViewModels\DataManager.cs" />

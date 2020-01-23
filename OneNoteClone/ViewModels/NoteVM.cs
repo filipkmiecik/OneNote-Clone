@@ -37,12 +37,13 @@ namespace OneNoteClone.ViewModels
             }
         }
 
-
         public ObservableCollection<Note> Notes { get; set; }
 
         public NewContainerCommand NewContainer { get; set; }
 
         public NewNoteCommand NewNote { get; set; }
+
+        public DeleteNoteContainerCommand DeleteNoteContainerCom { get; set; }
 
         public event EventHandler selectedNoteChanges;
 
@@ -50,6 +51,7 @@ namespace OneNoteClone.ViewModels
         {
             NewContainer = new NewContainerCommand(this);
             NewNote = new NewNoteCommand(this);
+            DeleteNoteContainerCom = new DeleteNoteContainerCommand(this);
 
             NoteContainer = new ObservableCollection<NoteContainer>();
             Notes = new ObservableCollection<Note>();
@@ -122,6 +124,16 @@ namespace OneNoteClone.ViewModels
         public void UpdateNoteThatIsSelected()
         {
             DataManager.Update(SelectedNote);
+        }
+
+        public void DeleteNoteContainer(NoteContainer noteContainer)
+        {
+            if(noteContainer != null)
+            {
+                DataManager.Delete(noteContainer);
+                LoadNoteContainers();
+            }
+            LoadNoteContainers();
         }
     }
 }
