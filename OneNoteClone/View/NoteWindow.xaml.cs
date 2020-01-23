@@ -42,9 +42,11 @@ namespace OneNoteClone.View
             {
                 if (!string.IsNullOrEmpty(viewModel.SelectedNote.FileDirectory))
                 {
-                    FileStream fileStream = new FileStream(viewModel.SelectedNote.FileDirectory, FileMode.Open);
-                    TextRange range = new TextRange(noteRichTextBox.Document.ContentStart, noteRichTextBox.Document.ContentEnd);
-                    range.Load(fileStream, DataFormats.Rtf);
+                    using (FileStream fileStream = new FileStream(viewModel.SelectedNote.FileDirectory, FileMode.Open))
+                    {
+                        TextRange range = new TextRange(noteRichTextBox.Document.ContentStart, noteRichTextBox.Document.ContentEnd);
+                        range.Load(fileStream, DataFormats.Rtf);
+                    }                 
                 }
             }
             else
@@ -181,11 +183,16 @@ namespace OneNoteClone.View
             string rtfFile = System.IO.Path.Combine(Environment.CurrentDirectory, $"{viewModel.SelectedContainer.Id}{viewModel.SelectedNote.Id}.rtf");
             viewModel.SelectedNote.FileDirectory = rtfFile;
 
-            FileStream fileStream = new FileStream(rtfFile, FileMode.Create);
-            TextRange range = new TextRange(noteRichTextBox.Document.ContentStart, noteRichTextBox.Document.ContentEnd);
-            range.Save(fileStream, DataFormats.Rtf);
+            using (FileStream fileStream = new FileStream(rtfFile, FileMode.Create))
+            {
+                TextRange range = new TextRange(noteRichTextBox.Document.ContentStart, noteRichTextBox.Document.ContentEnd);
+                range.Save(fileStream, DataFormats.Rtf);
+                viewModel.UpdateNoteThatIsSelected();
+            }
+           
+            
 
-            viewModel.UpdateNoteThatIsSelected();
+            
         }
     }
 }
