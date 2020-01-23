@@ -160,8 +160,15 @@ namespace OneNoteClone.View
             else
             {
                 noteRichTextBox.Focus();
+                if(ComboBoxFontSize.SelectedItem == null)
+                {
+                    noteRichTextBox.FontSize = 12;
+                }
+                else
+                {
+                    noteRichTextBox.FontSize = Convert.ToDouble(ComboBoxFontSize.SelectedItem);
+                }
 
-                noteRichTextBox.FontSize = Convert.ToDouble(ComboBoxFontSize.SelectedItem);
                 //Run r = new Run("", this.noteRichTextBox.CaretPosition);
                 //r.FontSize =  Convert.ToDouble(ComboBoxFontSize.SelectedItem);
             }
