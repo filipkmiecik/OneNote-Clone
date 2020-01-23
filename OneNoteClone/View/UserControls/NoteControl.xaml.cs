@@ -26,7 +26,7 @@ namespace OneNoteClone.View.UserControls
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MyPropertyProperty =
-            DependencyProperty.Register("MyProperty", typeof(Note), typeof(NoteControl), new PropertyMetadata(null, SetValues));
+            DependencyProperty.Register("ShowNote", typeof(Note), typeof(NoteControl), new PropertyMetadata(null, SetValues));
 
         private static void SetValues(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
