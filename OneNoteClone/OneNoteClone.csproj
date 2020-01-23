@@ -75,11 +75,8 @@
     </ApplicationDefinition>
     <Compile Include="ViewModels\Commands\NewContainerCommand.cs" />
     <Compile Include="ViewModels\Commands\NewNoteCommand.cs" />
-    <Compile Include="ViewModels\Commands\SignInCommand.cs" />
-    <Compile Include="ViewModels\Commands\SignUpCommand.cs" />
     <Compile Include="ViewModels\DataManager.cs" />
     <Compile Include="ViewModels\NoteVM.cs" />
-    <Compile Include="ViewModels\SignInVM.cs" />
     <Compile Include="View\NoteWindow.xaml.cs">
       <DependentUpon>NoteWindow.xaml</DependentUpon>
     </Compile>
@@ -116,7 +113,6 @@
   <ItemGroup>
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\NoteContainer.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

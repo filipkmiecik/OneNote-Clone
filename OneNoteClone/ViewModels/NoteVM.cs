@@ -26,11 +26,25 @@ namespace OneNoteClone.ViewModels
             }
         }
 
+        private Note _selectedNote;
+
+        public Note SelectedNote
+        {
+            get { return _selectedNote; }
+            set {
+                _selectedNote = value;
+                selectedNoteChanges(this, new EventArgs());
+            }
+        }
+
+
         public ObservableCollection<Note> Notes { get; set; }
 
         public NewContainerCommand NewContainer { get; set; }
 
         public NewNoteCommand NewNote { get; set; }
+
+        public event EventHandler selectedNoteChanges;
 
         public NoteVM()
         {
@@ -103,6 +117,11 @@ namespace OneNoteClone.ViewModels
                 }
                 
             }
+        }
+
+        public void UpdateNoteThatIsSelected()
+        {
+            DataManager.Update(SelectedNote);
         }
     }
 }
