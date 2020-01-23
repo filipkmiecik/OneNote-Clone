@@ -12,10 +12,19 @@ namespace OneNoteClone.ViewModels
 {
     public class NoteVM
     {
+        /// <summary>
+        /// Colection of all NoteContainers
+        /// </summary>
         public ObservableCollection<NoteContainer> NoteContainer { get; set; }
 
+        /// <summary>
+        /// Holds current selectedContainer
+        /// </summary>
         private NoteContainer selectedContainer;
 
+        /// <summary>
+        /// public getter/setter of selectedContainer
+        /// </summary>
         public NoteContainer SelectedContainer
         {
             get { return selectedContainer; }
@@ -26,8 +35,14 @@ namespace OneNoteClone.ViewModels
             }
         }
 
+        /// <summary>
+        /// Holds  current selected Note
+        /// </summary>
         private Note _selectedNote;
 
+        /// <summary>
+        /// public getter/setter of selectedContainer
+        /// </summary>
         public Note SelectedNote
         {
             get { return _selectedNote; }
@@ -37,7 +52,11 @@ namespace OneNoteClone.ViewModels
             }
         }
 
+        /// <summary>
+        /// Colection of all Notes
+        /// </summary>
         public ObservableCollection<Note> Notes { get; set; }
+
 
         public NewContainerCommand NewContainer { get; set; }
 
@@ -47,6 +66,9 @@ namespace OneNoteClone.ViewModels
 
         public event EventHandler selectedNoteChanges;
 
+        /// <summary>
+        /// Public constructor of NoteVM
+        /// </summary>
         public NoteVM()
         {
             NewContainer = new NewContainerCommand(this);
@@ -60,6 +82,10 @@ namespace OneNoteClone.ViewModels
             LoadNote();
         }
 
+        /// <summary>
+        ///  Method that adds note to db and refresh note block
+        /// </summary>
+        /// <param name="noteContainerId"></param>
         public void CreateNewNote(int noteContainerId)
         {
             Note note = new Note()
@@ -73,6 +99,10 @@ namespace OneNoteClone.ViewModels
             LoadNote();
         }
 
+
+        /// <summary>
+        /// Method that adds noteContainer to db and refresh note container block
+        /// </summary>
         public void CreateNewContainer()
         {
             NoteContainer noteContainer = new NoteContainer()
@@ -85,6 +115,9 @@ namespace OneNoteClone.ViewModels
             LoadNoteContainers();
         }
 
+        /// <summary>
+        /// Loads all NoteContainers
+        /// </summary>
         public void LoadNoteContainers()
         {
             using (SQLiteConnection conn = new SQLiteConnection(DataManager.databaseFile))
@@ -120,12 +153,18 @@ namespace OneNoteClone.ViewModels
                 
             }
         }
-
+        /// <summary>
+        /// Method that updates Note that is selected
+        /// </summary>
         public void UpdateNoteThatIsSelected()
         {
             DataManager.Update(SelectedNote);
         }
 
+        /// <summary>
+        /// Method that delets selected noteContaier
+        /// </summary>
+        /// <param name="noteContainer"></param>
         public void DeleteNoteContainer(NoteContainer noteContainer)
         {
             if(noteContainer != null)

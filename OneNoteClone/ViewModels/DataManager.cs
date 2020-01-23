@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace OneNoteClone.ViewModels
 {
+    /// <summary>
+    /// Manager of our local DB.
+    /// </summary>
     public class DataManager
     {
+        /// <summary>
+        /// Contains path to Db
+        /// </summary>
         public static string databaseFile = Path.Combine(Environment.CurrentDirectory, "notesDatabase");
 
 
@@ -33,6 +39,13 @@ namespace OneNoteClone.ViewModels
 
             return result;
         }
+
+        /// <summary>
+        /// Updates Database
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entry"></param>
+        /// <returns></returns>
         public static bool Update<T>(T entry)
         {
             bool result = false;
@@ -47,6 +60,13 @@ namespace OneNoteClone.ViewModels
 
             return result;
         }
+
+        /// <summary>
+        /// Delete from Db
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entry"></param>
+        /// <returns></returns>
         public static bool Delete<T>(T entry)
         {
             bool result = false;

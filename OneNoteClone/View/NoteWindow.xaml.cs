@@ -17,9 +17,19 @@ using System.Windows.Shapes;
 
 namespace OneNoteClone.View
 {
+    /// <summary>
+    /// Main window
+    /// </summary>
     public partial class NoteWindow : Window
     {
+        /// <summary>
+        /// Note View Model
+        /// </summary>
         NoteVM viewModel;
+
+        /// <summary>
+        /// Public constructor of NoteWindow
+        /// </summary>
         public NoteWindow()
         {
             InitializeComponent();
@@ -35,6 +45,11 @@ namespace OneNoteClone.View
             ComboBoxFontSize.ItemsSource = sizes;
         }
 
+        /// <summary>
+        /// Method that changes values in noteRichTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ViewModel_selectedNoteChanges(object sender, EventArgs e)
         {
             noteRichTextBox.Document.Blocks.Clear();
@@ -56,11 +71,21 @@ namespace OneNoteClone.View
             
         }
 
+        /// <summary>
+        /// Method that shuts down application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
+        /// <summary>
+        /// Method that shuts down application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NoteRichTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             int lengthOfNoteRichTextBox = new TextRange(noteRichTextBox.Document.ContentStart, noteRichTextBox.Document.ContentEnd).Text.Length;
@@ -68,6 +93,12 @@ namespace OneNoteClone.View
             StatusBarText.Text = $"Note length: {lengthOfNoteRichTextBox} ";
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NoteRichTextBox_SelectionChanged(object sender, RoutedEventArgs e)
         { 
             var boldSelection = noteRichTextBox.Selection.GetPropertyValue(Inline.FontWeightProperty);
@@ -83,6 +114,12 @@ namespace OneNoteClone.View
             ComboBoxFontSize.Text = (noteRichTextBox.Selection.GetPropertyValue(Inline.FontSizeProperty)).ToString();
         }
 
+
+        /// <summary>
+        ///  Sets or unsets font bold
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonBold_Click(object sender, RoutedEventArgs e)
         {
             bool isButtonToggledOn = (sender as ToggleButton).IsChecked ?? false;
@@ -98,6 +135,11 @@ namespace OneNoteClone.View
             }
         }
 
+        /// <summary>
+        ///  Sets or unsets font style to italic
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonItalic_Click(object sender, RoutedEventArgs e)
         {
             bool isButtonToggledOn = (sender as ToggleButton).IsChecked ?? false;
@@ -113,6 +155,12 @@ namespace OneNoteClone.View
             }
         }
 
+
+        /// <summary>
+        ///  Sets or unsets font underline
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonUnderline_Click(object sender, RoutedEventArgs e)
         {
             bool isButtonToggledOn = (sender as ToggleButton).IsChecked ?? false;
@@ -131,6 +179,11 @@ namespace OneNoteClone.View
             }
         }
 
+        /// <summary>
+        /// Sets Font Family
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBoxFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -152,6 +205,11 @@ namespace OneNoteClone.View
             }
         }
 
+        /// <summary>
+        /// ets or unsets font size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBoxFontSize_TextChanged(object sender, TextChangedEventArgs e)
         {
             bool isSomethingSelected = noteRichTextBox.Selection.IsEmpty;
@@ -178,6 +236,11 @@ namespace OneNoteClone.View
 
         }
 
+        /// <summary>
+        /// Saves progress in the note to file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveFileBtn_Click(object sender, RoutedEventArgs e)
         {
             string rtfFile = System.IO.Path.Combine(Environment.CurrentDirectory, $"{viewModel.SelectedContainer.Id}{viewModel.SelectedNote.Id}.rtf");
@@ -189,9 +252,6 @@ namespace OneNoteClone.View
                 range.Save(fileStream, DataFormats.Rtf);
                 viewModel.UpdateNoteThatIsSelected();
             }
-           
-            
-
             
         }
 

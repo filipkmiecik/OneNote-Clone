@@ -8,10 +8,19 @@ using SQLite;
 
 namespace OneNoteClone.Models
 {
+    /// <summary>
+    /// This class is template object of NoteContainer that will be inserted into DB.
+    /// </summary>
     public class NoteContainer : INotifyPropertyChanged
-	{
+	{   
+        /// <summary>
+        /// PK of our note Container
+        /// </summary>
 		private int id;
 
+        /// <summary>
+        /// Public getter/setter of id
+        /// </summary>
 		[PrimaryKey, AutoIncrement]
 		public int Id
 		{
@@ -23,8 +32,14 @@ namespace OneNoteClone.Models
 			}
 		}
 
+        /// <summary>
+        /// Name of our new NoteContainer
+        /// </summary>
 		private string name;
 
+        /// <summary>
+        /// Public getter/setter of mame
+        /// </summary>
 		public string Name
 		{
 			get { return name; }
@@ -35,8 +50,15 @@ namespace OneNoteClone.Models
 			}
 		}
 
+        /// <summary>
+        /// Defines whitch User have access to this noteContainer
+        /// </summary>
 		private int userId;
 
+
+        /// <summary>
+        /// Public getter/setter of userId
+        /// </summary>
 		[Indexed]
 		public int UserId
 		{
@@ -48,8 +70,15 @@ namespace OneNoteClone.Models
 			}
 		}
 
+        /// <summary>
+        /// Event that's triggered when property is changed
+        /// </summary>
 		public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        ///  Update ???
+        /// </summary>
+        /// <param name="value"></param>
 		private void OnPropertyChanged(string value)
 		{
 			if (PropertyChanged != null)
