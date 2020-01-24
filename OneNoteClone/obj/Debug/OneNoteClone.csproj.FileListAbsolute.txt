@@ -45,14 +45,12 @@ C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\bin\Debug\SQLitePCL
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\bin\Debug\SQLite-net.xml
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone.csprojAssemblyReference.cache
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\NoteWindow.g.cs
-C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\SignInWindow.g.cs
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\App.g.cs
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone_Content.g.cs
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone_MarkupCompile.cache
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone_MarkupCompile.lref
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\NoteWindow.baml
-C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\View\SignInWindow.baml
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone.g.resources
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone.Properties.Resources.resources
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Debug\OneNoteClone.csproj.GenerateResource.cache
