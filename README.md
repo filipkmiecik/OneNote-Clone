@@ -2,7 +2,7 @@
 
 App for taking notes inspired by Microsoft OneNote, created using C#, WPF, XAML and SQLite
 
-<img src="img/appPreview.png" width="600">
+<img src="img/appPreview.png" width="730">
 
 ## Features
 
