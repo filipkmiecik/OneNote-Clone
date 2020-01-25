@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:OneNoteClone"
              StartupUri="View/NoteWindow.xaml">
     <Application.Resources>
-       
+        <SolidColorBrush x:Key="TextColor" Color="#FFFFFF" />
+        
     </Application.Resources>
+    
 </Application>

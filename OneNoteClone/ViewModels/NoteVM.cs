@@ -1,4 +1,4 @@
-﻿using OneNoteClone.Models;
+﻿ using OneNoteClone.Models;
 using OneNoteClone.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
@@ -162,7 +162,7 @@ namespace OneNoteClone.ViewModels
         }
 
         /// <summary>
-        /// Method that delets selected noteContaier
+        /// Method that deletes selected noteContaier
         /// </summary>
         /// <param name="noteContainer"></param>
         public void DeleteNoteContainer(NoteContainer noteContainer)
@@ -172,7 +172,6 @@ namespace OneNoteClone.ViewModels
                 DataManager.Delete(noteContainer);
                 LoadNoteContainers();
             }
-            LoadNoteContainers();
         }
     }
 }

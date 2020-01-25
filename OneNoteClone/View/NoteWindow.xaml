@@ -7,48 +7,50 @@
         xmlns:vm="clr-namespace:OneNoteClone.ViewModels"
         xmlns:ui="clr-namespace:OneNoteClone.View.UserControls"
         mc:Ignorable="d"
-        Title="NoteWindow" Height="450" Width="800">
+        Title="OneNote Clone" Height="450" Width="800">
     <Window.Resources>
         <vm:NoteVM x:Key="VM"/>
     </Window.Resources>
-    <DockPanel x:Name="mainContainer">
-        <Menu DockPanel.Dock="Top">
+    <DockPanel
+        x:Name="mainContainer">
+        <Menu DockPanel.Dock="Top"
+               Background="#404040"
+               Foreground="{StaticResource TextColor}">
             <MenuItem Header="File">
                 <MenuItem Header="New Section"
-                          Command="{Binding NewContainer}"/>
+                          Command="{Binding NewContainer}"
+                          Foreground="#262626"/>
                 <MenuItem Header="New Note"
                           Command="{Binding NewNote}"
-                          CommandParameter="{Binding SelectedContainer}"/>
+                          CommandParameter="{Binding SelectedContainer}"
+                          Foreground="#262626"/>
                 <MenuItem x:Name="ExitMenuItem"
                           Header="Shutdown"
-                          Click="ExitMenuItem_Click"                         
+                          Click="ExitMenuItem_Click" 
+                          Foreground="#262626"
                           />
             </MenuItem>
         </Menu>
-        <StatusBar DockPanel.Dock="Bottom">
+        <StatusBar
+            Background="#404040"
+            Foreground="{StaticResource TextColor}"
+            DockPanel.Dock="Bottom">
             <StatusBarItem>
                 <TextBlock x:Name="StatusBarText"></TextBlock>
             </StatusBarItem>
         </StatusBar>
-        <ListView Width="200"
-                  DockPanel.Dock="Right"
-                  SelectedItem="{Binding SelectedNote}"
-                  ItemsSource="{Binding Notes}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ui:NoteControl ShowNote="{Binding}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <ListView Width="600"
+        <ListView Width="593"
                   Height="50"
+                  Background="#262626"
+                  Foreground="{StaticResource TextColor}"
+                  BorderThickness="0"
                   DockPanel.Dock="top"
                   SelectedItem="{
                     Binding SelectedContainer, 
                     Mode=TwoWay, 
                     UpdateSourceTrigger=PropertyChanged
                   }"
-                  ItemsSource="{Binding NoteContainer}">
+                  ItemsSource="{Binding NoteContainer}" HorizontalAlignment="Left">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -69,19 +71,29 @@
             </ListView.ItemTemplate>
         </ListView>
         <ToolBarTray
-            DockPanel.Dock="Top">
-            <ToolBar>
+            DockPanel.Dock="Top"
+            Background="#404040"
+            Height="29"
+            Margin="0,0,-0.667,0">
+            <ToolBar
+                 Background="#404040"
+                 BorderThickness="0"
+                 Foreground="{StaticResource TextColor}">
                 <ToggleButton Content="B" 
                         x:Name="buttonBold"
+                        Foreground="{StaticResource TextColor}"
                         FontWeight="Bold"
                         Click="ButtonBold_Click"></ToggleButton>
                 <ToggleButton Content="I" 
                         x:Name="buttonItalic"
+                        Foreground="{StaticResource TextColor}"
                         FontStyle="Italic"
                         Click="ButtonItalic_Click"></ToggleButton>
                 <ToggleButton x:Name="buttonUnderline"
+                        Foreground="{StaticResource TextColor}"
                         Click="ButtonUnderline_Click">
-                    <TextBlock Text="U" TextDecorations="Underline"/></ToggleButton>
+                    <TextBlock Text="U" TextDecorations="Underline"/>
+                </ToggleButton>
                 <ComboBox x:Name="ComboBoxFontFamily"
                           SelectionChanged="ComboBoxFontFamily_SelectionChanged"
                           Width="100"></ComboBox>
@@ -89,14 +101,36 @@
                           Width="50"
                           IsEditable="True"
                           TextBoxBase.TextChanged="ComboBoxFontSize_TextChanged"></ComboBox>
-                <Button x:Name="SaveFileBtn" Content="Save" Click="SaveFileBtn_Click"/>
+                <Button x:Name="SaveFileBtn" 
+                          Foreground="#FFFFFF"    
+                          Content="Save" 
+                          Click="SaveFileBtn_Click"/>
             </ToolBar>
         </ToolBarTray>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="416*"/>
+                <ColumnDefinition Width="176*"/>
+            </Grid.ColumnDefinitions>
             <RichTextBox
                 x:Name="noteRichTextBox"
+                Background="#262626"
+                Foreground="{StaticResource TextColor}"
+                BorderThickness="0"
                 SelectionChanged="NoteRichTextBox_SelectionChanged"
-                TextChanged="NoteRichTextBox_TextChanged"/>
+                TextChanged="NoteRichTextBox_TextChanged" Grid.ColumnSpan="2" Margin="0,0,0,-0.333" HorizontalAlignment="Left" Width="593"/>
         </Grid>
+        <ListView 
+                  Background="#666666"
+                  BorderThickness="0"
+                  DockPanel.Dock="Right"
+                  SelectedItem="{Binding SelectedNote}"
+                  ItemsSource="{Binding Notes}" Margin="0,-79,0,-0.333">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ui:NoteControl ShowNote="{Binding}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </DockPanel>
 </Window>
