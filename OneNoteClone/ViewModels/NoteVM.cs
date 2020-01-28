@@ -130,6 +130,7 @@ namespace OneNoteClone.ViewModels
                 {
                     NoteContainer.Add(container);
                 }
+
             }
         }
         /// <summary>
