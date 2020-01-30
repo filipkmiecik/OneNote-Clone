@@ -90,7 +90,7 @@ namespace OneNoteClone.ViewModels
         {
             Note note = new Note()
             {
-                Title = "New Note",
+                Title = "Note",
                 ContainerId = noteContainerId,
                 UpdateDate = DateTime.Now,
                 CreationDate = DateTime.Now
@@ -107,7 +107,7 @@ namespace OneNoteClone.ViewModels
         {
             NoteContainer noteContainer = new NoteContainer()
             {
-                Name = "New Notebook"
+                Name = "Notebook"
             };
 
             DataManager.Insert(noteContainer);

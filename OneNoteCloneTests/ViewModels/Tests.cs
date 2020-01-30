@@ -35,56 +35,6 @@ namespace OneNoteClone.ViewModels.Tests
             {
                 Name = "Test"
             };
-
-            Assert.AreEqual(test.Name, "Test");
         }
-
-        /* 4later
-
-        [TestMethod()]
-        public void LoadNoteContainersTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void LoadNoteTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void UpdateNoteThatIsSelectedTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void DeleteNoteContainerTest()
-        {
-            Assert.Fail();
-        }
-    }
-
-    [TestClass()]
-    public class DataManagerTests
-    {
-        [TestMethod()]
-        public void InsertTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void UpdateTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void DeleteTest()
-        {
-            Assert.Fail();
-        }*/
     }
 }

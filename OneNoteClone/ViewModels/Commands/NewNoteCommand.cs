@@ -50,7 +50,7 @@ namespace OneNoteClone.ViewModels.Commands
         {
             NoteContainer selectedNoteCotainer = parameter as NoteContainer;
             VM.CreateNewNote(selectedNoteCotainer.Id);
-            //new notes will be born here
+            
         }
     }
 }

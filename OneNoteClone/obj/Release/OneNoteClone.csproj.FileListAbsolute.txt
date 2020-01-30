@@ -27,3 +27,4 @@ C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Release\OneNote
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Release\OneNoteClone.csproj.CopyComplete
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Release\OneNoteClone.exe
 C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Release\OneNoteClone.pdb
+C:\Users\fizzc\OneDrive\Dokumenty\OneNote-Clone\OneNoteClone\obj\Release\OneNoteClone.csprojAssemblyReference.cache
