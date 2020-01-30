@@ -14,7 +14,7 @@
     <DockPanel
         x:Name="mainContainer">
         <Menu DockPanel.Dock="Top"
-               Background="#404040"
+               Background="{StaticResource BackgroundMedium}"
                Foreground="{StaticResource TextColor}">
             <MenuItem Header="File">
                 <MenuItem Header="New Section"
@@ -32,7 +32,7 @@
             </MenuItem>
         </Menu>
         <StatusBar
-            Background="#404040"
+            Background="{StaticResource BackgroundMedium}"
             Foreground="{StaticResource TextColor}"
             DockPanel.Dock="Bottom">
             <StatusBarItem>
@@ -41,7 +41,7 @@
         </StatusBar>
         <ListView Width="593"
                   Height="50"
-                  Background="#262626"
+                  Background="{StaticResource BackgroundDark}"
                   Foreground="{StaticResource TextColor}"
                   BorderThickness="0"
                   DockPanel.Dock="top"
@@ -72,11 +72,11 @@
         </ListView>
         <ToolBarTray
             DockPanel.Dock="Top"
-            Background="#404040"
+            Background="{StaticResource BackgroundMedium}"
             Height="29"
             Margin="0,0,-0.667,0">
             <ToolBar
-                 Background="#404040"
+                 Background="{StaticResource BackgroundMedium}"
                  BorderThickness="0"
                  Foreground="{StaticResource TextColor}">
                 <ToggleButton Content="B" 
@@ -114,14 +114,14 @@
             </Grid.ColumnDefinitions>
             <RichTextBox
                 x:Name="noteRichTextBox"
-                Background="#262626"
+                Background="{StaticResource BackgroundDark}"
                 Foreground="{StaticResource TextColor}"
                 BorderThickness="0"
                 SelectionChanged="NoteRichTextBox_SelectionChanged"
                 TextChanged="NoteRichTextBox_TextChanged" Grid.ColumnSpan="2" Margin="0,0,0,-0.333" HorizontalAlignment="Left" Width="593"/>
         </Grid>
         <ListView 
-                  Background="#666666"
+                  Background="{StaticResource BackgroundBright}"
                   BorderThickness="0"
                   DockPanel.Dock="Right"
                   SelectedItem="{Binding SelectedNote}"

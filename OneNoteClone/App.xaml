@@ -5,7 +5,9 @@
              StartupUri="View/NoteWindow.xaml">
     <Application.Resources>
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFF" />
-        
+        <SolidColorBrush x:Key="BackgroundDark" Color="#262626" />
+        <SolidColorBrush x:Key="BackgroundMedium" Color="#404040" />
+        <SolidColorBrush x:Key="BackgroundBright" Color="#666666" />
     </Application.Resources>
     
 </Application>
